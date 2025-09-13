@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom"
 import Logo from "./Logo"
 
 const Header = () =>{
@@ -6,9 +7,9 @@ const Header = () =>{
             <Logo/>
             <nav>
                 <ul className="flex gap-6 place-content-end">
-                    <li>Home</li>
-                    <li>Endpoints</li>
-                    <li>About</li>
+                    <Link to = "/"><li>Home</li></Link>
+                    <Link to = "/endpoint"><li>Endpoints</li></Link>
+                    <Link to = "/about"><li>About</li></Link>
                 </ul>
             </nav>
         </header>
