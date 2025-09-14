@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react"
 import { Link } from "react-router-dom"
+import Editar from "../Editar/Editar"
 
 const Card = () =>{
     const [valor,setValor] = useState([])
@@ -12,7 +13,8 @@ const Card = () =>{
 
     return (
         <>
-            {valor.map((item) => {
+        <Editar/>
+            {/* {valor.map((item) => {
                 return (
                     <div key={item.id} className="grid grid-rows-2 h-[300px] w-[250px] border border-indigo-600 rounded-md bg-red-50">
                         <div></div>
@@ -22,7 +24,7 @@ const Card = () =>{
                             <Link to={`/setor/${item.id}`}><button>Acessar</button></Link>
                         </div>
                     </div>)
-            })}
+            })} */}
         </>
 )}
 export default Card
