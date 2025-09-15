@@ -3,13 +3,13 @@ import { Link } from "react-router-dom"
 import Editar from "../Editar/Editar"
 
 const Card = () =>{
-    const [valor,setValor] = useState([])
+    // const [valor,setValor] = useState([])
     
-    useEffect(()=>{
-        fetch("http://localhost:5134/api/Area/get-all")
-        .then(response => response.json())
-        .then(data => setValor(data))
-    },[])
+    // useEffect(()=>{
+    //     fetch("http://localhost:5134/api/Area/get-all")
+    //     .then(response => response.json())
+    //     .then(data => setValor(data))
+    // },[])
 
     return (
         <>
