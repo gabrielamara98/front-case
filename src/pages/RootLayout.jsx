@@ -6,7 +6,7 @@ function RootLayout() {
   return (
     <>
       <Header/>
-      <main className="flex justify-center flex-wrap gap-10 m-auto">
+      <main className="flex flex-col items-center gap-5 flex-wrap">
         <Outlet/>
       </main>
     </>

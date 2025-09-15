@@ -1,11 +1,8 @@
 import { useEffect, useState } from "react"
 import { Link } from "react-router-dom"
-import Editar from "../Editar/Editar"
-import Modal from "../Modal/Modal"
 
 const Card = () =>{
     const [valor,setValor] = useState([])
-    const [modalStatus, setModalStatus] = useState(false)
     
     useEffect(()=>{
         fetch("http://localhost:5241/api/Area/get-all")
