@@ -5,13 +5,14 @@ const Card = () =>{
     const [valor,setValor] = useState([])
     
     useEffect(()=>{
-        fetch("http://localhost:5241/api/Area/get-all")
+        // http://localhost:5241/api/Area/get-all
+        fetch("https://jsonplaceholder.typicode.com/users")
         .then(response => response.json())
         .then(data => setValor(data))
     },[])
 
     return (
-        <>
+        <div className="grid grid-cols-4 gap-12"> 
             {valor.map((item) => {
                 return (
                     <div key={item.id} className="grid grid-rows-2 w-[250px] border border-indigo-600 rounded-md bg-red-50 py-4 px-4">
@@ -22,6 +23,6 @@ const Card = () =>{
                         </div>
                     </div>)
             })}
-        </>
+        </div>
 )}
 export default Card
