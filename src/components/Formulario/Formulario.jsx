@@ -30,8 +30,8 @@ const Formulario = ({ btnText }) => {
             setNome('')
             setResponsavel('')
             setDescricao('')
+            window.location.reload()
         })
-
     }
 
     return (
