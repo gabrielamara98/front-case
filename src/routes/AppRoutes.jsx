@@ -2,8 +2,9 @@ import {createBrowserRouter} from 'react-router-dom'
 import RootLayout from '../pages/RootLayout'
 import About from '../components/About/About'
 import Endpoint from '../components/Endpoint/Endpoint'
-import Processo from '../components/Processo/Processo'
-import Home from '../components/Home/Home'
+import Home from '../pages/Home'
+import Area from '../pages/Area'
+import Processo from '../pages/Processo'
 
 export const router = createBrowserRouter([
     {path: "/",
@@ -12,7 +13,8 @@ export const router = createBrowserRouter([
         {index:true,element:<Home/>},
         {path:"about", element:<About/>},
         {path:"endpoint",element:<Endpoint/>},
-        {path:"setor/*", element:<Processo/>}
+        {path:"area/:id", element:<Area/>},
+        {path:"processo/:id",element:<Processo/>}
     ]
     },
 ])

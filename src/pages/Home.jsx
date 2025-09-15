@@ -1,5 +1,5 @@
-import Formulario from '../Formulario/Formulario'
-import Card from '../Card/Card'
+import Formulario from '../components/Formulario/Formulario'
+import Card from '../components/Card/Card'
 
 const Home = () =>{
     return(

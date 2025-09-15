@@ -1,16 +1,8 @@
 import { useEffect, useState } from "react";
 import { useLocation, Link } from "react-router-dom"
 
-const Setor = () => {
-    const path = useLocation();
-    const locationPath = path.pathname
-    const id = locationPath.split("/")
-    id.splice(0, 2)
-
-    const location = useLocation()
-
-    const {nome} = location.state
-
+const ProcessoList = () => {
+    
     // const [valor, setValor] = useState([])
     // const [loading, setLoading] = useState(true)
 
@@ -37,4 +29,4 @@ const Setor = () => {
         // </div>
     )
 }
-export default Setor
+export default ProcessoList
