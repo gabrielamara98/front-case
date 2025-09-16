@@ -3,10 +3,10 @@ import DescricaoInput from "./DescricaoInput"
 import NomeInput from "./NomeInput"
 import ResponsavelInput from "./ResponsavelInput"
 
-const Formulario = ({ btnText }) => {
-    const [nome, setNome] = useState('')
-    const [descricao, setDescricao] = useState('')
-    const [responsavel, setResponsavel] = useState('')
+const Formulario = ({ btnText, onSubmit, valoresIniciais = {}}) => {
+    const [nome, setNome] = useState(valoresIniciais.nome ||'')
+    const [descricao, setDescricao] = useState(valoresIniciais.descricao||'')
+    const [responsavel, setResponsavel] = useState(valoresIniciais.responsavel ||'')
 
     const handleSubmit = (x) => {
         x.preventDefault()
@@ -15,23 +15,7 @@ const Formulario = ({ btnText }) => {
             descricao,
             responsavel
         }
-
-        const data = JSON.stringify(objeto)
-
-        fetch("http://localhost:5241/api/Area/nova-area", {
-            method: "POST",
-            headers: {
-                'Content-Type': 'application/json'
-            },
-            body: data
-        })
-        .then(response => response.json())
-        .then(() =>{
-            setNome('')
-            setResponsavel('')
-            setDescricao('')
-            window.location.reload()
-        })
+         onSubmit(objeto)
     }
 
     return (
