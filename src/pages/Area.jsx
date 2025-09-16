@@ -63,7 +63,7 @@ const Area = () => {
             <h1 className='text-3xl'>Cadastrar um novo Processo</h1>
             <Formulario btnText="Cadastrar" onSubmit={(dados) => {
                 dados.idArea = id
-                fetch("http://localhost:5241/api/Processo/novo-processo", {
+                fetch("http://localhost:5241/api/Processo/novo-processo-pai", {
                     method: "POST",
                     headers: {
                         'Content-Type': 'application/json'
