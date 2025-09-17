@@ -8,9 +8,7 @@ const Processo= () =>{
     const[valor, setValor] = useState({})
     const[valor2, setValor2] = useState([])
     const { areaId, processoId } = useParams();
-
-    
-
+    console.log(areaId)
     
     useEffect(()=>{
         fetch(`http://localhost:5241/api/Processo/${processoId}`)
