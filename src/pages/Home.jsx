@@ -6,7 +6,7 @@ const Home = () => {
         <>
             <h1 className='mt-5 text-3xl'>Areas Cadastradas</h1>
             <Card />
-            <h1 className='text-3xl'>Cadastrar uma nova Area</h1>
+            <h1 className='text-3xl'>Cadastrar uma nova Área</h1>
             <Formulario btnText=" Criar"
                 onSubmit={(dados) => {
                     fetch("http://localhost:5241/api/Area/nova-area", {

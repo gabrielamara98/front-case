@@ -7,18 +7,21 @@ import Formulario from "../components/Formulario/Formulario"
 const Processo= () =>{
     const[valor, setValor] = useState({})
     const[valor2, setValor2] = useState([])
-    const {id} = useParams()
+    const { areaId, processoId } = useParams();
+
+    
+
     
     useEffect(()=>{
-        fetch(`http://localhost:5241/api/Processo/${id}`)
+        fetch(`http://localhost:5241/api/Processo/${processoId}`)
         .then(response => response.json())
         .then(data =>setValor(data) )
-    },[])
+    },[processoId])
     useEffect(() => {
-        fetch(`http://localhost:5241/api/Processo/processo-filhos/${id}`)
+        fetch(`http://localhost:5241/api/Processo/processo-filhos/${processoId}`)
             .then(resp => resp.json())
             .then(data => setValor2(data))
-    }, [])
+    }, [processoId])
     return(
         <>
         <InfoGeral titulo={valor.nome} descricao={valor.descricao} resposanvel={valor.responsavel}/>
@@ -26,13 +29,13 @@ const Processo= () =>{
         {valor2.map((item) => {
                 return (
                     <div className="border py-2 px-4" key={item.id}>
-                        <span><Link to={`processo/${item.id}`}>{item.nome}</Link></span>
+                        <span><Link to={`/area/${areaId}/processo/${item.id}`}>{item.nome}</Link></span>
                     </div>
                 )
             })}
         <h1 className='text-3xl'>Cadastrar um novo Processo</h1>
         <Formulario btnText="Cadastrar" onSubmit={(dados) => {
-                dados.idPai = id
+                dados.idPai = processoId
                 fetch("http://localhost:5241/api/Processo/novo-processo", {
                     method: "POST",
                     headers: {
